@@ -10,7 +10,7 @@ Command below will mount the current directory as the "source" directory that wi
 the destination folder on example.com:
 
 ```shell
-docker run --rm -v ${PWD}:/data athlon1600/rsync bash -c 'rsync -avz -e "ssh -p 22" ./ root@example.com:/root/example'
+docker run -it --rm -v ${PWD}:/data athlon1600/rsync bash -c 'rsync -avz -e "ssh -p 22" ./ root@example.com:/root/example'
 ```
 
 You could also just define your `rsync` command inside `package.json` of your project, and then run `npm run sync`
@@ -20,7 +20,7 @@ from inside the container:
 {
   "scripts": {
     "sync": "rsync -avz -e \"ssh -p 22\" ./ root@example.com:/root/example",
-    "sync-windows": "docker run --rm -v ${PWD}:/data athlon1600/rsync bash -c \"npm run sync\""
+    "sync-windows": "docker run -it --rm -v %cd%:/data athlon1600/rsync bash -c \"npm run sync\""
   }
 }
 ```
