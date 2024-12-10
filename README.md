@@ -1,4 +1,4 @@
-# rsync
+# rsync on Windows
 
 Simple Docker image with rsync and Node.js pre-installed. Useful when wanting to use rsync on Windows.
 
@@ -27,6 +27,5 @@ from inside the container:
 
 Now you can run either `npm run sync` or `npm run sync-windows` depending on what operating system you are using.
 
-:warning: Note: Commands above assume you are using Windows Powershell. For regular command prompt, replace `${PWD}`
+**Note:** commands above assume you are using Windows Powershell. For regular command prompt, replace `${PWD}`
 with `%cd%`.
-
