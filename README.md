@@ -20,7 +20,8 @@ from inside the container:
 {
   "scripts": {
     "sync": "rsync -avz -e \"ssh -p 22\" ./ root@example.com:/root/example",
-    "sync-windows": "docker run -it --rm -v %cd%:/data athlon1600/rsync bash -c \"npm run sync\""
+    "sync-windows": "docker run -it --rm -v %cd%:/data athlon1600/rsync bash -c \"npm run sync\"",
+    "sync2": "rsync --chmod=644 --chmod=D755 -avz -e \"ssh -o StrictHostKeyChecking=no -p 22\" --exclude 'node_modules' --exclude 'dist' ./ root@example.com:/root/example"
   }
 }
 ```
